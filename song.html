@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sing Demo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id='container'>
+        <div>millivolts: <span id="millivolts">...</span></div>
+        <div>
+            <button id='sing'>sing</button>
+            <textarea id="song" rows="10" cols="50">[65,5],[77,10]</textarea>
+        </div>
+        <div> <button id='song1'>song1</button></div>
+        <div>This page demonstrates playing music on the robot. Pass in an array of notes giving the midi not followed by the duration in 1/64 of seconds. Midi notes less than 32 or more than 127 are played as rests.</div>
+        <div><img src="midiNoteNumbers.gif" alt="midoNoteNumbers.gif" /></div>
+    </div>
+    <script src='js/jquery-3.4.1.min.js'></script>
+    <script>
+    function playSong1(e) {
+        let transpose = 0; //12 brings up 1 octave
+        let tempo = 1; //Notes should be at least 4 in duration
+        let song1 = [];
+        song1.push([67 + transpose, 8 * tempo]);
+        song1.push([74 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 8 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([72 + transpose, 8 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([0 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([74 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([64 + transpose, 8 * tempo]);
+        song1.push([62 + transpose, 12 * tempo])
+        song1.push([0 + transpose, 8 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([74 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([72 + transpose, 8 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([74 + transpose, 4 * tempo]);
+        song1.push([0 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([0 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 8 * tempo]);
+        song1.push([64 + transpose, 12 * tempo]);
+        song1.push([0 + transpose, 8 * tempo]);
+        song1.push([67 + transpose, 6 * tempo]);
+        song1.push([64 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([0 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([65 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([0 + transpose, 6 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([71 + transpose, 2 * tempo]);
+        song1.push([74 + transpose, 4 * tempo]);
+        song1.push([72 + transpose, 4 * tempo]);
+        song1.push([71 + transpose, 2 * tempo]);
+        song1.push([69 + transpose, 2 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 4 * tempo]);
+        song1.push([69 + transpose, 6 * tempo]);
+        song1.push([67 + transpose, 2 * tempo]);
+        song1.push([71 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([64 + transpose, 2 * tempo]);
+        song1.push([62 + transpose, 2 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([67 + transpose, 4 * tempo]);
+        song1.push([64 + transpose, 2 * tempo]);
+        song1.push([62 + transpose, 2 * tempo]);
+
+
+        console.log(JSON.stringify(song1));
+        fetch('/sing?song=' + JSON.stringify(song1));
+    }
+    $('#song1').click(playSong1);
+
+    $("#sing").click(function() {
+        song = $("#song").val();
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    });
+
+    var latestData = {};
+
+    function readSensors() {
+        fetch('/sensors')
+            .then((resp) => resp.json())
+            .then(function(data) {
+                latestData = data;
+                // console.log(latestData)
+                $('#millivolts').text(latestData.voltage);
+            })
+    }
+    setInterval(readSensors, 20);
+    </script>
+</body>
+
+</html>
