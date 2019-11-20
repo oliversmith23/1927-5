@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SAASBOT Sing</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <textarea id="song" rows="10" cols="50">[[640,100],[650,200]]</textarea>
+        <button id="sing">sing</button>
+        <div><button id="song1">All Star 1</button></div>
+        <div><button id="song2">All Star 2</button></div>
+        <div><button id="song3">All Star 3</button></div>
+        <div><button id="song4">All Star 4</button></div>
+        <div><button id="song5">All Star 5</button></div>
+        <div><button id="song6">All Star 6</button></div>
+        <div><button id="song7">All Star 7</button></div>
+        >
+        <div><button id="playall">Play All</button></div>
+    </div>
+    <script src='js/jquery-3.4.1.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    var latestDate = {};
+
+    function updateData(data) {
+        //console.log(JSON.stringify(data, null, 4));
+        latestData = data;
+    }
+
+    var host = window.document.location.host;
+    var ws = new WebSocket('ws://' + host);
+    //var ws = new WebSocket('ws://pi5:5001');
+    ws.onmessage = function(event) {
+        updateData(JSON.parse(event.data));
+    };
+
+    $("#sing").click(function() {
+        song = $("#song").val();
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    });
+
+    function song1() {
+        let tempo = 1;
+        let pitch = 1;
+        song = [];
+        song.push([392 * pitch, 800 * tempo]);
+        song.push([587.33 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 800 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([523 * pitch, 800 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+
+
+        song = JSON.stringify(song);
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    }
+
+    $("#song1").click(song1);
+
+
+    function song2() {
+        let tempo = 1;
+        let pitch = 1;
+        song = [];
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([0 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([587.33 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([329.63 * pitch, 800 * tempo]);
+        song.push([293.67 * pitch, 1200])
+
+
+
+
+
+        song = JSON.stringify(song);
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    }
+
+    $("#song2").click(song2)
+
+
+
+    function song3() {
+        let tempo = 1;
+        let pitch = 1;
+        song = [];
+        song.push([0 * pitch, 800 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([587.33 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([523.25 * pitch, 800 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+
+
+
+
+
+
+
+
+        song = JSON.stringify(song);
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    }
+
+    $("#song3").click(song3);
+
+
+    function song4() {
+        let tempo = 1;
+        let pitch = 1;
+        song = [];
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([587.33 * pitch, 400 * tempo]);
+        song.push([0 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([0 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 800 * tempo]);
+        song.push([329.63 * pitch, 1200 * tempo]);
+        song.push([0 * pitch, 800 * tempo]);
+        song.push([392 * pitch, 600 * tempo]);
+        song.push([329.63 * pitch, 200 * tempo]);
+
+
+
+
+
+
+
+
+
+
+        song = JSON.stringify(song);
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    }
+
+    $("#song4").click(song4);
+
+
+    function song5() {
+        let tempo = 1;
+        let pitch = 1;
+        song = [];
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([0 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([349.23 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        song = JSON.stringify(song);
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    }
+
+    $("#song5").click(song5);
+
+    function song6() {
+        let tempo = 1;
+        let pitch = 1;
+        song = [];
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([0 * pitch, 600 * tempo]);
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([493.88 * pitch, 200 * tempo]);
+        song.push([587.33 * pitch, 400 * tempo]);
+        song.push([523.25 * pitch, 400 * tempo]);
+        song.push([493.88 * pitch, 200 * tempo]);
+        song.push([440 * pitch, 200 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 400 * tempo]);
+        song.push([440 * pitch, 600 * tempo]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        song = JSON.stringify(song);
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    }
+
+    $("#song6").click(song6);
+
+    function song7() {
+        let tempo = 1;
+        let pitch = 1;
+        song = [];
+        song.push([392 * pitch, 200 * tempo]);
+        song.push([493.88 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([329.63 * pitch, 200 * tempo]);
+        song.push([293.67 * pitch, 200 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([392 * pitch, 400 * tempo]);
+        song.push([329.63 * pitch, 200 * tempo]);
+        song.push([293.67 * pitch, 200 * tempo]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        song = JSON.stringify(song);
+        $.post("/sing", JSON.stringify({
+            song: song
+        }));
+    }
+
+    $("#song7").click(song7);
+
+
+
+
+    $("#playall").click(playall);
+
+    function playall() {
+        setTimeout(song1, 0)
+        setTimeout(song2, 5300)
+        setTimeout(song3, 12200)
+        setTimeout(song4, 19500)
+        setTimeout(song5, 26600)
+        setTimeout(song6, 31400)
+        setTimeout(song7, 34400)
+    }
+
+
+
+    $("textarea").keydown(function(e) {
+        e.stopPropagation();
+    });
+
+    $("body").keydown(function(e) {
+        console.log(e.keyCode);
+        var key = e.key;
+        if (e.key == "q") song1();
+         if (e.key == "w") song2();
+          if (e.key == "e") song3();
+           if (e.key == "r") song4();
+            if (e.key == "t") song5();
+             if (e.key == "y") song6();
+              if (e.key == "u") song7();
+
+    });
+    </script>
+</body>
+
+</html>
